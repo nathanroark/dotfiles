@@ -2,4 +2,5 @@
 
 ## alacritty
 ## astronvim
+## backgrounds
 ## tmux
