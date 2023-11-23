@@ -18,4 +18,18 @@ return { -- this table overrides highlights in all themes
   StatusLine = { bg = C.none },
   TabLine = { bg = C.none },
   TabLineFill = { bg = C.none },
+  WinSeparator = { bg = C.none },
+  PmenuSbar = { bg = C.none },
+  ColorColumn = { bg = C.none },
+
+  -- Diff Sidebar
+  DiffAdd = { bg = C.none },
+  DiffChange = { bg = C.none },
+  DiffDelete = { bg = C.none },
+  DiffText = { bg = C.none },
+
+  -- Git Signs
+  GitSignsAdd = { bg = C.none },
+  GitSignsChange = { bg = C.none },
+  GitSignsDelete = { bg = C.none },
 }
