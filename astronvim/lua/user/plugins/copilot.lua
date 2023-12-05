@@ -10,7 +10,7 @@ return {
           auto_trigger = true,
           keymap = {
             -- Nice key to accept so it wont interfere with autocomplete
-            accept = "<M-l>",
+            accept = "<C-[>",
             -- Nice to dismiss it
             dismiss = "<C-]>",
             -- Next suggestion
