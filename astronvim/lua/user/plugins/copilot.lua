@@ -9,14 +9,10 @@ return {
           enabled = true,
           auto_trigger = true,
           keymap = {
-            -- Nice key to accept so it wont interfere with autocomplete
-            accept = "<C-[>",
-            -- Nice to dismiss it
-            dismiss = "<C-]>",
-            -- Next suggestion
+            accept = "<M-l>", -- alt on linux, option on mac
             next = "<M-]>",
-            -- Prev suggestion
             prev = "<M-[>",
+            dismiss = false,
           },
         },
         filetypes = {

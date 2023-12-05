@@ -68,5 +68,8 @@ return {
 		channel = "stable",
 	},
 	-- colorscheme = "astrodark",
-	colorscheme = "kanagawa",
+	-- colorscheme = "kanagawa",
+	-- colorscheme = "tokyonight",
+	colorscheme = "tokyonight-moon",
+	-- colorscheme = "gruvbox",
 }
