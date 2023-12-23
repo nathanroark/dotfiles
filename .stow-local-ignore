@@ -1,0 +1,9 @@
+README.md
+.git
+.github
+Brewfile
+Brewfile.lock.json
+.config/nvim
+.DS_Store
+.stow-local-ignore
+Library/CloudStorage
