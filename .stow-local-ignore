@@ -1,9 +1,12 @@
 README.md
 .git
 .github
+.gitignore
 Brewfile
 Brewfile.lock.json
 .config/nvim
 .DS_Store
 .stow-local-ignore
 Library/CloudStorage
+.bashrc
+.zshrc
