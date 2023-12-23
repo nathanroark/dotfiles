@@ -52,16 +52,16 @@ return {
 		},
 		config = {
 			-- TODO: move this is a file?
-			tailwindcss = {
-				on_attach = function(client, bufnr)
-					local tw_highlight = require("tailwind-highlight")
-					tw_highlight.setup(client, bufnr, {
-						single_column = false,
-						mode = "background",
-						debounce = 200,
-					})
-				end
-			}
+			-- tailwindcss = {
+			-- 	on_attach = function(client, bufnr)
+			-- 		local tw_highlight = require("tailwind-highlight")
+			-- 		tw_highlight.setup(client, bufnr, {
+			-- 			single_column = false,
+			-- 			mode = "background",
+			-- 			debounce = 200,
+			-- 		})
+			-- 	end
+			-- }
 		}
 	},
 	updater = {
