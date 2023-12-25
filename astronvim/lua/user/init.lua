@@ -71,5 +71,7 @@ return {
 	-- colorscheme = "kanagawa",
 	-- colorscheme = "tokyonight",
 	colorscheme = "tokyonight-moon",
+	-- colorscheme = "poimandres", -- broken
 	-- colorscheme = "gruvbox",
+	-- colorscheme = "catppuccin-mocha"
 }
