@@ -3,7 +3,7 @@ return {
 	"nvim-neo-tree/neo-tree.nvim",
 	cmd = "Neotree",
 	opts = {
-		window = { position = "left", width = 32 },
+		window = { position = "left", width = 24 },
 		filesystem = {
 			filtered_items = {
 				hide_dotfiles = false,
