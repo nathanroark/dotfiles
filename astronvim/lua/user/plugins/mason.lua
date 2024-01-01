@@ -10,7 +10,6 @@ return {
         "html",
         "jsonls",
         "marksman",
-        "rust_analyzer",
         "tsserver",
         "yamlls",
       },

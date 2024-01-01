@@ -37,12 +37,12 @@ return {
 	},
 	options = {
 		opt = {
-			spell = false,      -- Enable spell checking
-			swapfile = false,   -- Disable swap files
-			title = true,       -- Allow nvim to update the term titlerelativenumber
-			scrolloff = 8,      -- keep 8 lines above and below cursor
+			spell = false, -- Enable spell checking
+			swapfile = false, -- Disable swap files
+			title = true,  -- Allow nvim to update the term titlerelativenumber
+			scrolloff = 8, -- keep 8 lines above and below cursor
 			-- cursorline = true,  -- highlight current line
-			relativenumber = true, -- show relative line numbers
+			-- relativenumber = true, -- show relative line numbers
 		},
 	},
 	lsp = {
