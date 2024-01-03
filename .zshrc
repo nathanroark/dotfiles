@@ -8,12 +8,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="nathan"
 # ZSH_THEME="muse"
 # ZSH_THEME="murilasso"
 # ZSH_THEME="steeef"
-
-
+#
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -74,7 +74,11 @@ ZSH_THEME="nathan"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,36 +108,48 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#-----------------------------------------------------------------------------
-# Environment settings
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+#================================================================================================================
+# Custom things
+#================================================================================================================
+
+# Fun aliases
+alias stats='bpytop'
+alias info='clear && neofetch | lolcat'
+alias wisdom='fortune | cowsay | lolcat'
+alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
+alias pipes='pipes -t 0 -p 3 -R -f 50 -r 6000'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
+
+. "$HOME/.cargo/env"
+
 export PATH="/home/nathan/.local/share/bob/nvim-bin:$PATH"
-# export NVM_DIR="$HOME/.config/nvm"
-
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# Optimize NVM Initialization: NVM can slow down the shell startup.
-# One way to speed it up is to lazy-load NVM.
-# Instead of sourcing nvm.sh on startup, you can modify your .zshrc to load NVM the first time it's used.
-export NVM_DIR="$HOME/.nvm"
-nvm() {
-  unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  nvm "$@"
-}
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-if [ "$TMUX" = "" ]; then exec tmux; fi
-# tmux new-session
+# Start tmux on shell startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 # bun completions
-[ -s "/Users/nathan/.bun/_bun" ] && source "/Users/nathan/.bun/_bun"
+[ -s "/home/nathan/.bun/_bun" ] && source "/home/nathan/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

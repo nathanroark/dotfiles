@@ -10,4 +10,3 @@ Brewfile.lock.json
 .stow-local-ignore
 Library/CloudStorage
 .bashrc
-.zshrc
