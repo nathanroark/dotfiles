@@ -23,9 +23,17 @@ return {
   {
     'Pocco81/Catppuccino.nvim',
   },
+  -- Oxocarbon Theme
+  {
+    'nyoom-engineering/oxocarbon.nvim',
+  },
+  -- Boo
+  {
+    'rockerBOO/boo-colorscheme-nvim',
+  },
   -- add discord presence
   {
     "andweeb/presence.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
   }
 }

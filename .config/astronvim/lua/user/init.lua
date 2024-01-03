@@ -37,12 +37,12 @@ return {
 	},
 	options = {
 		opt = {
-			spell = false, -- Enable spell checking
-			swapfile = false, -- Disable swap files
-			title = true,  -- Allow nvim to update the term titlerelativenumber
-			scrolloff = 8, -- keep 8 lines above and below cursor
-			-- cursorline = true,  -- highlight current line
-			-- relativenumber = true, -- show relative line numbers
+			spell = false,      -- Enable spell checking
+			swapfile = false,   -- Disable swap files
+			title = true,       -- Allow nvim to update the term titlerelativenumber
+			scrolloff = 8,      -- keep 8 lines above and below cursor
+			cursorline = false, -- highlight current line
+			relativenumber = true, -- show relative line numbers
 		},
 	},
 	lsp = {
@@ -70,11 +70,14 @@ return {
 		channel = "stable",
 	},
 	-- colorscheme = "astrodark",
+	-- colorscheme = "oxocarbon",
+	-- colorscheme = "catppuccin-mocha"
+	-- colorscheme = "rose-pine",
+	-- colorscheme = "boo",
 	-- colorscheme = "kanagawa",
-	-- colorscheme = "tokyonight",
-	colorscheme = "tokyonight-moon",
+	colorscheme = "tokyonight-night",
+	-- colorscheme = "tokyonight-moon",
 	-- colorscheme = "poimandres", -- broken
 	-- colorscheme = "gruvbox",
-	-- colorscheme = "catppuccin-mocha"
 
 }
