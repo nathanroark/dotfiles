@@ -31,6 +31,14 @@ return {
   {
     'rockerBOO/boo-colorscheme-nvim',
   },
+  -- Moonfly
+  {
+    'bluz71/vim-moonfly-colors',
+  },
+  -- Flexoki
+  {
+    'kepano/flexoki',
+  },
   -- add discord presence
   {
     "andweeb/presence.nvim",
