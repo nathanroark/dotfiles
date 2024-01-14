@@ -9,9 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="nathan"
+# ZSH_THEME="nathan"
 # ZSH_THEME="muse"
-# ZSH_THEME="murilasso"
+ZSH_THEME="murilasso"
 # ZSH_THEME="steeef"
 #
 # Set list of themes to pick from when loading at random
@@ -142,10 +142,10 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-# Start tmux on shell startup
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+# # Start tmux on shell startup
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#   exec tmux
+# fi
 
 # bun completions
 [ -s "/home/nathan/.bun/_bun" ] && source "/home/nathan/.bun/_bun"
