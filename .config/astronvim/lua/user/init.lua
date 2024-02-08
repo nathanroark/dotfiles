@@ -63,8 +63,8 @@ return {
 	-- colorscheme = "night-owl",
 	-- colorscheme = "rose-pine",
 	-- colorscheme = "github_dark_default",
-	-- colorscheme = "tokyonight-night",
-	colorscheme = "kanagawa",
+	colorscheme = "tokyonight-night",
+	-- colorscheme = "kanagawa",
 	-- colorscheme = "astrodark",
 	-- colorscheme = "oxocarbon",
 	-- colorscheme = "catppuccin-mocha"
