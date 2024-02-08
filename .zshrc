@@ -4,21 +4,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+# Set name of the theme to load ---
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-# ZSH_THEME="nathan"
 # ZSH_THEME="muse"
 ZSH_THEME="murilasso"
 # ZSH_THEME="steeef"
-#
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -66,9 +57,6 @@ ZSH_THEME="murilasso"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -77,7 +65,7 @@ ZSH_THEME="murilasso"
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
+  # zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -117,47 +105,40 @@ alias stats='bpytop'
 alias info='clear && neofetch | lolcat'
 alias wisdom='fortune | cowsay | lolcat'
 alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
-alias pipes='pipes -t 0 -p 3 -R -f 50 -r 6000'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# add cargo to path
+export PATH="$HOME/.cargo/bin:$PATH"
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+# profile
+source $HOME/.zprofile
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
+# load brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# load ohmyzsh
+source $ZSH/oh-my-zsh.sh
+
+# # Start tmux on shell startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  exec tmux
 fi
 
-. "$HOME/.cargo/env"
-
-export PATH="/home/nathan/.local/share/bob/nvim-bin:$PATH"
-
-
-export NVM_DIR="$HOME/.config/nvm"
+# Node Version Manager
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-# # Start tmux on shell startup
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
-
-# bun completions
-[ -s "/home/nathan/.bun/_bun" ] && source "/home/nathan/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # pnpm
-export PNPM_HOME="/home/nathan/.local/share/pnpm"
+export PNPM_HOME="/Users/nathan/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun completions
+[ -s "/Users/nathan/.bun/_bun" ] && source "/Users/nathan/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

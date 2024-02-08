@@ -6,14 +6,28 @@ return {
         "bashls",
         "lua_ls",
         "cssls",
-        "dockerls",
         "html",
         "jsonls",
-        "marksman",
         "tsserver",
         "yamlls",
+        "clangd"
+      },
+      servers = {
+        -- Ensure mason installs the server
+        clangd = {
+          -- signature help provider
+          signature_help = false,
+
+          -- keys = {
+          --   { "<leader>cR", "<cmd>ClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+          -- },
+          -- capabilities = {
+          --   offsetEncoding = { "utf-8" },
+          -- }
+        },
       },
     },
+
   },
   {
     "jay-babu/mason-null-ls.nvim",
@@ -21,8 +35,9 @@ return {
       ensure_installed = {
         "eslint_d",
         "prettier",
-        "beautysh"
+        "beautysh",
+        "clang-format",
       },
     },
-  }
+  },
 }

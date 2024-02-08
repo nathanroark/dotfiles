@@ -1,4 +1,10 @@
 return {
+  -- Xcode Theme
+  { 'lunacookies/vim-colors-xcode' },
+  -- Night Owl
+  { 'oxfist/night-owl.nvim' },
+  -- GitHub
+  { 'projekt0n/github-nvim-theme' },
   -- Rose Pine Theme
   {
     "rose-pine/neovim",

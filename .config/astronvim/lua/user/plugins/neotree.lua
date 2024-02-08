@@ -10,11 +10,11 @@ return {
 					-- auto close
 					-- vimc.cmd("Neotree close")
 					-- OR
-					require("neo-tree.command").execute({ action = "close" })
+					-- require("neo-tree.command").execute({ action = "close" })
 				end
 			},
 		},
-		window = { position = "left", width = 42 },
+		window = { position = "left", width = 24 },
 		filesystem = {
 			filtered_items = {
 				hide_dotfiles = false,

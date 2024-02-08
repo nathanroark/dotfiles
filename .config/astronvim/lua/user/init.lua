@@ -1,14 +1,3 @@
-local function add_missing_imports()
-	vim.api.nvim_create_user_command('TSAddMissingImports', function()
-		vim.lsp.buf.code_action({
-			apply = true,
-			context = {
-				only = { "source.addMissingImports" }
-			}
-		})
-	end, {})
-end
-
 return {
 	-- add new user interface icon
 	icons = {
@@ -19,86 +8,70 @@ return {
 		GitChange = "",
 		GitDelete = "",
 	},
-	polish = function()
-		-- TODO:: this should work better but now it takes npm packaes first then aliases
-		add_missing_imports()
-	end,
-	highlights = {
-		init = function()
-			local utils = require("user.utils")
-			local red = 0xe06c75
-			local green = 0x04260f
-
-			return {
-				DiffAdd = { bg = utils.dim(green) },
-				DiffDelete = { bg = utils.dim(red) },
-			}
-		end,
-	},
 	options = {
 		opt = {
-			showtabline = 0,    -- don't show tabline
-			laststatus = 0,     -- Hide statusline
-			spell = false,      -- Enable spell checking
-			swapfile = false,   -- Disable swap files
-			title = true,       -- Allow nvim to update the term titlerelativenumber
-			scrolloff = 8,      -- keep 8 lines above and below cursor
-			cursorline = false, -- highlight current line
-			relativenumber = true, -- show relative line numbers
-		},
-	},
-	mappings = {
-		n = { -- disable <leader>b mappings
-			["<leader>b"] = false,
-			["<leader>bb"] = false,
-			["<leader>bd"] = false,
-			["<leader>b\\"] = false,
-			["<leader>b|"] = false,
-		},
-	},
-	plugins = {
-		{
-			"rebelot/heirline.nvim",
-			opts = function(_, opts)
-				opts.tabline = nil -- remove tabline
-				return opts
-			end,
+			scrolloff = 8,       -- keep 8 lines above and below cursor
+			cursorline = false,  -- highlight current line
+			spell = false,       -- Enable spell checking
+			title = true,        -- Allow nvim to update the term titlerelativenumber
+			relativenumber = false, -- Disable relative line numbers
 		},
 	},
 	lsp = {
+		setup_handlers = {
+			-- add custom handler
+			rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
+		},
 		formatting = {
-			timeout_ms = 20000,
+			-- timeout_ms = 20000,
 			format_on_save = {
 				enabled = true, -- enable format on save
 			},
 		},
 		config = {
-			-- TODO: move this is a file?
-			-- tailwindcss = {
-			-- 	on_attach = function(client, bufnr)
-			-- 		local tw_highlight = require("tailwind-highlight")
-			-- 		tw_highlight.setup(client, bufnr, {
-			-- 			single_column = false,
-			-- 			mode = "background",
-			-- 			debounce = 200,
-			-- 		})
-			-- 	end
-			-- }
-		}
+			clangd = {
+				capabilities = {
+					offsetEncoding = "utf-8"
+				},
+			},
+		},
+	},
+	plugins = {
+		{
+			"p00f/clangd_extensions.nvim", -- install lsp plugin
+			init = function()
+				-- load clangd extensions when clangd attaches
+				local augroup = vim.api.nvim_create_augroup("clangd_extensions", { clear = true })
+				vim.api.nvim_create_autocmd("LspAttach", {
+					group = augroup,
+					desc = "Load clangd_extensions with clangd",
+					callback = function(args)
+						if assert(vim.lsp.get_client_by_id(args.data.client_id)).name == "clangd" then
+							require "clangd_extensions"
+							-- add more `clangd` setup here as needed such as loading autocmds
+							vim.api.nvim_del_augroup_by_id(augroup) -- delete auto command since it only needs to happen once
+						end
+					end,
+				})
+			end,
+		},
 	},
 	updater = {
-		channel = "stable",
+		channel = "nightly",
 	},
+	-- colorscheme = "xcodedarkhc",
+	-- colorscheme = "night-owl",
+	-- colorscheme = "rose-pine",
+	-- colorscheme = "github_dark_default",
+	-- colorscheme = "tokyonight-night",
+	colorscheme = "kanagawa",
 	-- colorscheme = "astrodark",
 	-- colorscheme = "oxocarbon",
 	-- colorscheme = "catppuccin-mocha"
-	-- colorscheme = "rose-pine",
 	-- colorscheme = "boo",
-	-- colorscheme = "kanagawa",
 	-- colorscheme = "kanagawa-dragon",
-	colorscheme = "tokyonight-night",
-	-- colorscheme = "tokyonight-moon",
-	-- colorscheme = "moonfly",
+	-- colorscheme = "tokyonight-moon", -- good with transparent background
+	-- colorscheme = "moonfly"
 	-- colorscheme = "flexoki-neovim",
 	-- colorscheme = "poimandres", -- broken
 	-- colorscheme = "gruvbox",
