@@ -1,6 +1,5 @@
 # dotfiles
 
-## alacritty
+## kitty
 ## astronvim
-## backgrounds
 ## tmux
