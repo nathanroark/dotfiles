@@ -4,9 +4,9 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     config = function()
-      require("copilot").setup({
+      require("copilot").setup {
         suggestion = {
-          enabled = false,
+          enabled = true,
           auto_trigger = true,
           keymap = {
             accept = "<M-l>", -- alt on linux, option on mac
@@ -26,7 +26,7 @@ return {
           cvs = false,
           ["."] = false,
         },
-      })
+      }
     end,
   },
 }

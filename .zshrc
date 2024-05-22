@@ -4,12 +4,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Set name of the theme to load ---
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="muse"
-ZSH_THEME="murilasso"
-# ZSH_THEME="steeef"
+ZSH_THEME="robbyrussell"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -57,18 +62,22 @@ ZSH_THEME="murilasso"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  zsh-autosuggestions
-  # zsh-syntax-highlighting
+	git
+	zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
+
+export PATH=$PATH:/home/nathan/.local/share/bob/nvim-bin
 
 # User configuration
 
@@ -96,48 +105,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#================================================================================================================
-# Custom things
-#================================================================================================================
-
 # Fun aliases
 alias stats='bpytop'
 alias info='clear && neofetch | lolcat'
 alias wisdom='fortune | cowsay | lolcat'
 alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
 
-# add cargo to path
-export PATH="$HOME/.cargo/bin:$PATH"
-
 # profile
 source $HOME/.zprofile
 
-# load brew
+# load brew on macos, I dont think this is a problem on Linux
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# load ohmyzsh
-source $ZSH/oh-my-zsh.sh
-
-# # Start tmux on shell startup
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  exec tmux
-fi
-
-# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pnpm
-export PNPM_HOME="/Users/nathan/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # bun completions
-[ -s "/Users/nathan/.bun/_bun" ] && source "/Users/nathan/.bun/_bun"
+[ -s "/home/nathan/.bun/_bun" ] && source "/home/nathan/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

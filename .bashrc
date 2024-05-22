@@ -55,17 +55,9 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-# Git branch in prompt.
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
 
 if [ "$color_prompt" = yes ]; then
-    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
- # PS1="\[\033[38;5;14m\]\w\[\033[0m\]\$ "
- 
-PS1="\[$(tput setaf 6)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 2)\]\h\[$(tput sgr0)\]\[$(tput setaf 7)\]:\[$(tput sgr0)\]\[$(tput setaf 5)\]\W\[$(tput sgr0)\]\[$(tput bold)\]\[$(tput setaf 3)\]\$(parse_git_branch)\[$(tput sgr0)\]\[$(tput setaf 7)\] \\$ \[$(tput sgr0)\]"
-
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -96,17 +88,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF --color=auto'
+alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls='ls --color=auto'
-
-# Fun aliases
-alias stats='bpytop'
-alias info='clear && neofetch | lolcat'
-alias wisdom='fortune | cowsay | lolcat'
-alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
-alias pipes='pipes -t 0 -p 3 -R -f 50 -r 6000'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -132,17 +116,3 @@ if ! shopt -oq posix; then
   fi
 fi
 . "$HOME/.cargo/env"
-
-export PATH="/home/nathan/.local/share/bob/nvim-bin:$PATH"
-
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-# Start tmux on shell startup
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  exec tmux
-fi
-

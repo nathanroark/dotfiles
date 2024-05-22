@@ -1,4 +1,4 @@
 function astro {
-  cd "$HOME/.config/astronvim"
+  cd "$HOME/.config/nvim"
   nvim .
 }
