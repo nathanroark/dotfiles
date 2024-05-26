@@ -114,8 +114,8 @@ alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
 # profile
 source $HOME/.zprofile
 
-# load brew on macos, I dont think this is a problem on Linux
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# load brew on macos, I dont think this is a problem on Linux (nope)
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

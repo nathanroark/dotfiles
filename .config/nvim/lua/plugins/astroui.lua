@@ -16,10 +16,10 @@ return {
     -- colorscheme = "rose-pine",
     -- colorscheme = "github_dark_default",
     -- colorscheme = "tokyonight-night",
-    colorscheme = "kanagawa",
+    -- colorscheme = "kanagawa",
     -- colorscheme = "astrodark",
     -- colorscheme = "oxocarbon",
-    -- colorscheme = "catppuccin-mocha",
+    colorscheme = "catppuccin-mocha",
     -- colorscheme = "boo",
     -- colorscheme = "kanagawa-dragon",
     -- colorscheme = "tokyonight-moon", -- good with transparent background
