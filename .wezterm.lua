@@ -21,6 +21,8 @@ config.window_padding = {
 config.keys = {
 	{ key = "LeftArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
 	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
+	{ key = "LeftArrow", mods = "ALT", action = act.ActivateTabRelative(-1) },
+	{ key = "RightArrow", mods = "ALT", action = act.ActivateTabRelative(1) },
 }
 
 --Requires Wayland
