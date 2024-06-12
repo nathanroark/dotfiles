@@ -11,7 +11,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    -- colorscheme = "astrodark",
+    colorscheme = "astrodark",
     -- colorscheme = "night-owl",
     -- colorscheme = "rose-pine",
     -- colorscheme = "github_dark_default",
@@ -19,7 +19,7 @@ return {
     -- colorscheme = "kanagawa",
     -- colorscheme = "astrodark",
     -- colorscheme = "oxocarbon",
-    colorscheme = "catppuccin-mocha",
+    -- colorscheme = "catppuccin-mocha",
     -- colorscheme = "boo",
     -- colorscheme = "kanagawa-dragon",
     -- colorscheme = "tokyonight-moon", -- good with transparent background

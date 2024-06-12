@@ -12,6 +12,7 @@ return {
       -- spell = false, -- Enable spell checking
       -- title = true, -- Allow nvim to update the term titlerelativenumber
       -- relativenumber = false, -- Disable relative line numbers
+      clipboard = "unnamedplus", -- Use the system clipboard
     },
   },
 

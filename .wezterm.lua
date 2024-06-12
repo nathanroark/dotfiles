@@ -4,10 +4,12 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+local act = wezterm.action
+
 -- This is where you actually apply your config choices
 
 config.font = wezterm.font("JetBrains Mono")
-config.color_scheme = "Kanagawa Dragon"
+config.color_scheme = "Kasugano (terminal.sexy)"
 
 config.window_padding = {
 	left = 0,
@@ -15,6 +17,14 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+
+config.keys = {
+	{ key = "LeftArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
+	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
+}
+
+--Requires Wayland
+-- config.window_background_opacity = 7.0
 
 -- and finally, return the configuration to wezterm
 return config
