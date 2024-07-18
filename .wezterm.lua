@@ -4,7 +4,7 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-local act = wezterm.action
+-- local act = wezterm.action
 
 -- This is where you actually apply your config choices
 
@@ -18,16 +18,20 @@ config.window_padding = {
 	bottom = 0,
 }
 
-config.keys = {
-	{ key = "LeftArrow",  mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
-	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
-	{ key = "LeftArrow",  mods = "ALT",      action = act.ActivateTabRelative(-1) },
-	{ key = "RightArrow", mods = "ALT",      action = act.ActivateTabRelative(1) },
-}
+-- Better tabs in Tab Bar if using them
+-- config.keys = {
+-- 	{ key = "LeftArrow",  mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
+-- 	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
+-- 	{ key = "LeftArrow",  mods = "ALT",      action = act.ActivateTabRelative(-1) },
+-- 	{ key = "RightArrow", mods = "ALT",      action = act.ActivateTabRelative(1) },
+-- }
 
 --Requires Wayland
 config.enable_wayland = false
 -- config.window_background_opacity = 7.0
+
+-- Disable Tab Bar
+config.enable_tab_bar = false
 
 -- and finally, return the configuration to wezterm
 return config

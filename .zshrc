@@ -127,3 +127,8 @@ export NVM_DIR="$HOME/.nvm"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Start tmux on shell startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  exec tmux
+fi
