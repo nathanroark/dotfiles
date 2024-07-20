@@ -16,7 +16,10 @@ return {
     },
   },
 
-  -- == examples of adding plugins ==
+  {
+    "neovim/nvim-lspconfig",
+    config = function() require("lspconfig").clangd.setup {} end,
+  },
 
   "andweeb/presence.nvim",
   {

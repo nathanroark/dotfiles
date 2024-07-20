@@ -40,12 +40,18 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
+      "clangd",
       -- "pyright"
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      clangd = {
+        capabilities = { offsetEncoding = "utf-8" },
+        -- cmd = { "clangd", "--background-index" },
+        -- filetypes = { "c", "cpp", "objc", "objcpp" },
+        -- root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
+      },
     },
     -- customize how language servers are attached
     handlers = {

@@ -4,9 +4,8 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- Needed to edit the keybindings
 -- local act = wezterm.action
-
--- This is where you actually apply your config choices
 
 config.font = wezterm.font("JetBrains Mono")
 config.color_scheme = "Kasugano (terminal.sexy)"
@@ -18,7 +17,7 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- Better tabs in Tab Bar if using them
+-- Better tabs in Tab Bar if using tabs (currently using tmux instead)
 -- config.keys = {
 -- 	{ key = "LeftArrow",  mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
 -- 	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
@@ -27,7 +26,7 @@ config.window_padding = {
 -- }
 
 --Requires Wayland
-config.enable_wayland = false
+-- config.enable_wayland = false
 -- config.window_background_opacity = 7.0
 
 -- Disable Tab Bar
