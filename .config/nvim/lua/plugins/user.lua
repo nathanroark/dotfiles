@@ -12,14 +12,10 @@ return {
       -- spell = false, -- Enable spell checking
       -- title = true, -- Allow nvim to update the term titlerelativenumber
       -- relativenumber = false, -- Disable relative line numbers
-      clipboard = "unnamedplus", -- Use the system clipboard
     },
   },
 
-  {
-    "neovim/nvim-lspconfig",
-    config = function() require("lspconfig").clangd.setup {} end,
-  },
+  -- == examples of adding plugins ==
 
   "andweeb/presence.nvim",
   {
