@@ -4,9 +4,6 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- Needed to edit the keybindings
-local act = wezterm.action
-
 config.font = wezterm.font("JetBrains Mono")
 config.color_scheme = "Kasugano (terminal.sexy)"
 
@@ -17,13 +14,16 @@ config.window_padding = {
 	bottom = 0,
 }
 
--- Better tabs in Tab Bar if using tabs (currently using tmux instead)
-config.keys = {
-	{ key = "LeftArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
-	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
-	{ key = "LeftArrow", mods = "ALT", action = act.ActivateTabRelative(-1) },
-	{ key = "RightArrow", mods = "ALT", action = act.ActivateTabRelative(1) },
-}
+-- -- Needed to edit the keybindings
+-- local act = wezterm.action
+--
+-- -- Better tabs in Tab Bar if using tabs (currently using tmux instead)
+-- config.keys = {
+-- 	{ key = "LeftArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(-1) },
+-- 	{ key = "RightArrow", mods = "CTRL|ALT", action = act.MoveTabRelative(1) },
+-- 	{ key = "LeftArrow", mods = "ALT", action = act.ActivateTabRelative(-1) },
+-- 	{ key = "RightArrow", mods = "ALT", action = act.ActivateTabRelative(1) },
+-- }
 
 --Requires Wayland
 -- config.enable_wayland = false
@@ -33,7 +33,7 @@ config.keys = {
 config.bypass_mouse_reporting_modifiers = "ALT"
 
 -- Disable Tab Bar
--- config.enable_tab_bar = false
+config.enable_tab_bar = false
 
 -- and finally, return the configuration to wezterm
 return config

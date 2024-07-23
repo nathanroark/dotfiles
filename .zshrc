@@ -7,7 +7,6 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(
-	git
 	zsh-autosuggestions
 )
 
@@ -17,10 +16,10 @@ export PATH=$PATH:/home/nathan/.local/share/bob/nvim-bin
 
 
 # Fun aliases
-alias stats='bpytop'
-alias info='clear && neofetch | lolcat'
-alias wisdom='fortune | cowsay | lolcat'
-alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
+# alias stats='bpytop'
+# alias info='clear && neofetch | lolcat'
+# alias wisdom='fortune | cowsay | lolcat'
+# alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
 
 # profile
 source $HOME/.zprofile
@@ -39,9 +38,9 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# # Start tmux on shell startup
-# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
+# Start tmux on shell startup
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  exec tmux
+fi
 
 [[ -s "/home/nathan/.gvm/scripts/gvm" ]] && source "/home/nathan/.gvm/scripts/gvm"
