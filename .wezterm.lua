@@ -6,7 +6,7 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 24.0
-config.color_scheme = "Kasugano (terminal.sexy)"
+config.color_scheme = "rose-pine"
 config.colors = {
 	-- The default text color
 	-- foreground = "silver",
