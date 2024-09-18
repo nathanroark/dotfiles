@@ -38,10 +38,10 @@ export NVM_DIR="$HOME/.nvm"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-## Start tmux on shell startup
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
- exec tmux
-fi
+# ## Start tmux on shell startup
+# if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#  exec tmux
+# fi
 
 #[[ -s "/home/nathan/.gvm/scripts/gvm" ]] && source "/home/nathan/.gvm/scripts/gvm"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
