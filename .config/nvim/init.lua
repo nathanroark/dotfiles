@@ -1,6 +1,4 @@
--- Lazy Package Manager
-require("config.lazy")
-
+-- TODO: make this be lazyvim and vscode compatible
 -- Set the leader key to space
 vim.g.mapleader = " "
 
