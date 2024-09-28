@@ -14,7 +14,6 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
 
-
 # Fun aliases
 # alias stats='bpytop'
 # alias info='clear && neofetch | lolcat'
@@ -39,8 +38,13 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 ## Start tmux on shell startup
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
- exec tmux
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+ #Eexec tmux
+#fi
+if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
+  # Adapted from https://unix.stackexchange.com/a/176885/347104
+  # Create session 'main' or attach to 'main' if already exists.
+  tmux new-session -A -s main
 fi
 
 #[[ -s "/home/nathan/.gvm/scripts/gvm" ]] && source "/home/nathan/.gvm/scripts/gvm"
@@ -56,4 +60,4 @@ esac
 
 
 # Go and Go packages with GOPATH
-export GOPATH=/Users/nathan/go
+# export GOPATH=/Users/nathan/go
