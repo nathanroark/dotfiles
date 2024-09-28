@@ -11,7 +11,7 @@ config.colors = {
 	-- The default text color
 	-- foreground = "silver",
 	-- The default background color
-	background = "hsl(0, 0%, 5%)",
+	background = "hsl(230, 10%, 5%)",
 }
 
 config.window_padding = {
@@ -34,8 +34,8 @@ config.window_padding = {
 
 --Requires Wayland
 -- config.enable_wayland = true
-config.window_background_opacity = 0.80
-config.macos_window_background_blur = 25
+config.window_background_opacity = 0.85
+config.macos_window_background_blur = 20
 -- config.window_background_opacity = 1.0
 
 -- Use ALT instead of SHIFT to bypass application mouse reporting
