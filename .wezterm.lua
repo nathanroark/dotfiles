@@ -13,7 +13,7 @@ config.colors = {
 	-- The default text color
 	-- foreground = "silver",
 	-- The default background color
-	-- background = "hsl(240, 10%, 5%)",
+	background = "hsl(240, 5%, 10%)",
 }
 
 config.window_padding = {
