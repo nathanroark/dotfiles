@@ -1,29 +1,13 @@
--- Set leader key
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
-
-vim.cmd("au BufRead,BufNewFile *.templ setfiletype templ")
-local autocmd = vim.api.nvim_create_autocmd
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
-  pattern = { "*.templ" },
-  callback = function()
-    local buf = vim.api.nvim_get_current_buf()
-    vim.api.nvim_buf_set_option(buf, "filetype", "templ")
-  end,
-})
 
 vim.opt.rtp:prepend(lazypath)
 
@@ -32,6 +16,7 @@ vim.api.nvim_set_keymap('n', '<leader>w', ':w<CR>', { noremap = true, silent = t
 
 -- Map <leader>q to :q
 vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', { noremap = true, silent = true })
+
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -76,8 +61,28 @@ vim.o.completeopt = "menuone,noselect"
 -- Set terminal gui colors to true
 vim.o.termguicolors = true
 
--- add binaries installed by mason.nvim to path
-local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
-vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin" .. (is_windows and ";" or ":") .. vim.env.PATH
 
-require("lazy").setup("plugins")
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "options"
+require "nvchad.autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)
