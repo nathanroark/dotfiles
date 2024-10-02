@@ -1,6 +1,6 @@
 # dotfiles
 
 ## wezTerm
-## astronvim
+## nvchad
 ## tmux
 ## zshrc
