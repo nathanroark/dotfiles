@@ -24,8 +24,8 @@ find "$fonts_dir" -name '*Windows Compatible*' -delete
 
 fc-cache -fv
 
-# also make bob usable 
-# 
+# also make bob usable
+#
 
 #
 # export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
@@ -57,4 +57,3 @@ fc-cache -fv
 # bob complete bash >> ~/.local/share/bash-completion/completions/bob
 #
 # # alias nvim='$HOME/.local/share/bob/v0.10.1/nvim-linux64/bin/nvim'
- 
