@@ -1,0 +1,11 @@
+README.md
+nathan.zsh-theme
+.git
+.github
+.gitignore
+Brewfile
+Brewfile.lock.json
+.DS_Store
+.stow-local-ignore
+Library/CloudStorage
+.bashrc
