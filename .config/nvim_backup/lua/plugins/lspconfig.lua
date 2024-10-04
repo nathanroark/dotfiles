@@ -5,18 +5,18 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
-    { "princejoogie/tailwind-highlight.nvim" },
+    -- { "princejoogie/tailwind-highlight.nvim" },
   },
   config = function()
     -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
+    local lspconfig = require "lspconfig"
     lspconfig.sourcekit.setup { {} }
 
     -- import mason_lspconfig plugin
-    local mason_lspconfig = require("mason-lspconfig")
+    local mason_lspconfig = require "mason-lspconfig"
 
     -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local cmp_nvim_lsp = require "cmp_nvim_lsp"
 
     local keymap = vim.keymap -- for conciseness
 
@@ -65,49 +65,61 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup_handlers {
       -- default handler for installed servers
       function(server_name)
-        lspconfig[server_name].setup({
+        lspconfig[server_name].setup {
           capabilities = capabilities,
-        })
+        }
       end,
       ["graphql"] = function()
-        lspconfig["graphql"].setup({
+        lspconfig["graphql"].setup {
           capabilities = capabilities,
           filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
-        })
+        }
       end,
       ["rust_analyzer"] = function()
-        lspconfig["rust_analyzer"].setup({
+        lspconfig["rust_analyzer"].setup {
           capabilities = capabilities,
           on_attach = function()
             -- TODO: allow parsing the closes file rustfmt.toml and parse out tab_spaces=<number>
             vim.opt.shiftwidth = 2
-          end
-        })
+          end,
+        }
       end,
       ["tailwindcss"] = function()
-        lspconfig["tailwindcss"].setup({
+        lspconfig["tailwindcss"].setup {
           capabilities = capabilities,
           on_attach = function(client, bufnr)
-            local tw_highlight = require("tailwind-highlight")
+            local tw_highlight = require "tailwind-highlight"
             tw_highlight.setup(client, bufnr, {
               single_column = false,
               mode = "background",
               debounce = 200,
             })
           end,
-        })
+        }
       end,
       ["biome"] = function()
-        lspconfig["biome"].setup({
+        lspconfig["biome"].setup {
           capabilities = capabilities,
-          filetypes = { "javascript", "javascriptreact", "json", "jsonc", "typescript", "typescript.tsx", "typescriptreact", "astro", "svelte", "vue", "css" }
-        })
+          filetypes = {
+            "javascript",
+            "javascriptreact",
+            "json",
+            "jsonc",
+            "typescript",
+            "typescript.tsx",
+            "typescriptreact",
+            "astro",
+            "svelte",
+            "vue",
+            "css",
+          },
+        }
       end,
       ["lua_ls"] = function()
-        lspconfig["lua_ls"].setup({
+        lspconfig["lua_ls"].setup {
           capabilities = capabilities,
           settings = {
             Lua = {
@@ -116,7 +128,7 @@ return {
                 enable = true,
                 defaultConfig = {
                   align_array_table = "false",
-                }
+                },
               },
               diagnostics = {
                 globals = { "vim" },
@@ -126,8 +138,8 @@ return {
               },
             },
           },
-        })
+        }
       end,
-    })
+    }
   end,
 }

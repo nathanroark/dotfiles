@@ -19,4 +19,4 @@ map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 -- Nvim Tree
 map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 map("n", "<leader>e", "<cmd>NvimTreeFocus<CR>", { desc = "nvimtree focus window" })
-map("n", "<leader>o", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree focus window" })
+map("n", "<leader>o", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })

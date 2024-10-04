@@ -1,32 +1,24 @@
-return {
-  {
-    "nvimtools/none-ls.nvim",
-    opts = function()
-      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-      local null_ls = require "null-ls"
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
-      return {
-        sources = {
-          null_ls.builtins.formatting.golines,
-          null_ls.builtins.formatting.goimports_reviser,
-          null_ls.builtins.formatting.stylua,
-        },
-        on_attach = function(client, bufnr)
-          if client.supports_method "textDocument/formatting" then
-            vim.api.nvim_clear_autocmds {
-              group = augroup,
-              buffer = bufnr,
-            }
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              group = augroup,
-              buffer = bufnr,
-              callback = function()
-                vim.lsp.buf.format { bufnr = bufnr }
-              end,
-            })
-          end
-        end,
-      }
-    end,
-  },
+-- Customize None-ls sources
+
+---@type LazySpec
+return {
+  "nvimtools/none-ls.nvim",
+  opts = function(_, opts)
+    -- opts variable is the default configuration table for the setup function call
+    -- local null_ls = require "null-ls"
+
+    -- Check supported formatters and linters
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+
+    -- Only insert new sources, do not replace the existing ones
+    -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
+    opts.sources = require("astrocore").list_insert_unique(opts.sources, {
+      -- Set a formatter
+      -- null_ls.builtins.formatting.stylua,
+      -- null_ls.builtins.formatting.prettier,
+    })
+  end,
 }

@@ -1,54 +1,39 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
+-- Customize Mason plugins
+
+---@type LazySpec
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
+  -- use mason-lspconfig to configure LSP installations
+  {
     "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-  config = function()
-    -- import mason
-    local mason = require "mason"
-
-    -- import mason-lspconfig
-    local mason_lspconfig = require "mason-lspconfig"
-
-    local mason_tool_installer = require "mason-tool-installer"
-
-    -- enable mason and configure icons
-    mason.setup {
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    }
-
-    mason_lspconfig.setup {
-      -- list of servers for mason to install
+    -- overrides `require("mason-lspconfig").setup(...)`
+    opts = {
       ensure_installed = {
-        -- "typescript-language-server",
-        "html",
-        "cssls",
-        "tailwindcss",
         "lua_ls",
-        "rust_analyzer",
-        "dockerls",
-        "jsonls",
-        "docker_compose_language_service",
-        "biome",
-        "yamlls",
-        "graphql",
-        "prismals",
+        -- add more arguments for adding more language servers
       },
-    }
-
-    mason_tool_installer.setup {
+    },
+  },
+  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
+  {
+    "jay-babu/mason-null-ls.nvim",
+    -- overrides `require("mason-null-ls").setup(...)`
+    opts = {
       ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua",   -- lua formatter
-        "eslint-lsp",
+        "stylua",
+        -- add more arguments for adding more null-ls sources
       },
-    }
-  end,
+    },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    -- overrides `require("mason-nvim-dap").setup(...)`
+    opts = {
+      ensure_installed = {
+        "python",
+        -- add more arguments for adding more debuggers
+      },
+    },
+  },
 }
