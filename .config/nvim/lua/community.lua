@@ -7,5 +7,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   -- { import = "astrocommunity.pack.typescript-deno" },
 }
