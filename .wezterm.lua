@@ -37,8 +37,8 @@ config.window_padding = {
 
 --Requires Wayland
 -- config.enable_wayland = true
-config.window_background_opacity = 0.80
-config.macos_window_background_blur = 20
+config.window_background_opacity = 0.75
+config.macos_window_background_blur = 10
 -- config.window_background_opacity = 1.0
 
 -- Use ALT instead of SHIFT to bypass application mouse reporting
