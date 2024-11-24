@@ -8,7 +8,7 @@ config.font = wezterm.font("JetBrains Mono")
 config.font_size = 21.0
 -- config.color_scheme = "rose-pine"
 -- config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Rose Pine"
 config.colors = {
 	-- The default text color
 	-- foreground = "silver",
@@ -37,7 +37,7 @@ config.window_padding = {
 
 --Requires Wayland
 -- config.enable_wayland = true
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.80
 config.macos_window_background_blur = 12
 -- config.window_background_opacity = 1.0
 
