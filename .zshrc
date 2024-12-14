@@ -3,15 +3,16 @@
 # confirmations, etc.) must go above this block; everything else may go below.
 # To change settings, run `p10k configure` or manually edit `~/.p10k.zsh`.
 
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+#
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 plugins=(
 	zsh-autosuggestions
@@ -65,3 +66,7 @@ esac
 
 #-----------------------------------------
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
+# eval "$(oh-my-posh init zsh)" # no theme (default)
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/tokyo.omp.json)"
+ 
