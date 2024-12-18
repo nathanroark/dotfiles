@@ -5,18 +5,21 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#7eb8da",
-          "style": "plain",
-          "template": "\u250f[<#ffffff>\ueb99</> {{ .UserName }} | <#ffffff>\uf108</> {{ .HostName }}]",
-          "type": "session"
-        },
-        {
           "properties": {
             "root_icon": "\uf292"
           },
           "style": "diamond",
           "template": "\uf0e7",
           "type": "root"
+        },
+        {
+          "foreground": "#7eb8da",
+          "properties": {
+            "style": "full"
+          },
+          "style": "plain",
+          "template": "\u250f[<#98bfad>{{ .Path }}</>]",
+          "type": "path"
         },
         {
           "foreground": "#ffa5d8",
@@ -56,24 +59,8 @@
       "segments": [
         {
           "foreground": "#7eb8da",
-          "properties": {
-            "style": "full"
-          },
           "style": "plain",
-          "template": "\u2516[<#98bfad>{{ .Path }}</>]",
-          "type": "path"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "foreground": "#7eb8da",
-          "style": "plain",
-          "template": "\u2514\u2500Δ",
+          "template": "\u2516[\u2500Δ",
           "type": "text"
         }
       ],
