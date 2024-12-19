@@ -13,3 +13,6 @@ cd tmux-${TMUX_VERSION}
 sudo make install
 cd ../..
 rm -rf tmp_tmux
+
+# install tpm (tmux plugin manager)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
