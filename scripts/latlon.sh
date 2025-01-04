@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Script to convert DMS coordinates to Decimal Degrees entirely in Bash
 
 # Function to convert DMS to Decimal Degrees
 convert_dms_to_dd() {

@@ -1,4 +1,5 @@
-# Fun aliases
+# Fun / useful aliases
+alias latlon="~/scripts/latlon.sh"
 # alias stats='bpytop'
 # alias info='clear && neofetch | lolcat'
 # alias wisdom='fortune | cowsay | lolcat'
