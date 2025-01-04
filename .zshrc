@@ -63,3 +63,13 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-tokyo.omp.json)
 # dumb thing I have to do for work
 # export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+
+. "$HOME/.local/bin/env"
+
+
+# add scripts to path
+export PATH="$HOME/scripts:$PATH"
