@@ -4,6 +4,12 @@ alias latlon="~/scripts/latlon.sh"
 # alias info='clear && neofetch | lolcat'
 # alias wisdom='fortune | cowsay | lolcat'
 # alias bonsai='cbonsai --life 40 --live --multiplier 5 --time 0.1 --infinite'
+#
+# lsd aliases
+alias ls='lsd'
+alias ll='lsd -l'
+alias la='lsd -la'
+
 
 #-----------------------------------------
 
