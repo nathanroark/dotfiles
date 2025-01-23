@@ -6,16 +6,16 @@ local config = wezterm.config_builder()
 
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 20.0
--- config.color_scheme = "rose-pine"
+config.color_scheme = "rose-pine"
 -- config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "Rose Pine"
-config.colors = {
-	-- The default text color
-	-- foreground = "silver",
-	-- The default background color
-	-- background = "hsl(240, 15%, 13%)",
-	background = "hsl(240, 0%, 0%)",
-}
+-- config.color_scheme = "Rose Pine"
+-- config.colors = {
+-- The default text color
+-- foreground = "silver",
+-- The default background color
+-- background = "hsl(240, 15%, 13%)",
+-- background = "hsl(240, 0%, 0%)",
+-- }
 
 config.window_padding = {
 	left = 0,
@@ -37,8 +37,8 @@ config.window_padding = {
 
 --Requires Wayland
 -- config.enable_wayland = true
-config.window_background_opacity = 0.70
-config.macos_window_background_blur = 0
+-- config.window_background_opacity = 0.70
+-- config.macos_window_background_blur = 0
 -- config.window_background_opacity = 1.0
 
 -- Use ALT instead of SHIFT to bypass application mouse reporting
