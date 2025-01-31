@@ -10,6 +10,7 @@ return {
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
+  -- { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-nvim" },
