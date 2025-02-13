@@ -15,6 +15,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.proto" },
   { import = "astrocommunity.pack.python" },
   -- { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.rainbow-delimiter-indent-blankline" },
