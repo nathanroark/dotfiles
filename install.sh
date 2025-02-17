@@ -17,6 +17,8 @@ echo ========== 🧩 Installing plugins ==========
 
 # setup config with stow
 echo ========== 📦 Stowing configs ==========
+cd ~/dotfiles
+stow .
 
 
 echo ========== 🚀 Setup complete ==========
