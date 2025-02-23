@@ -41,7 +41,7 @@ config.window_padding = {
 
 --Requires Wayland
 -- config.enable_wayland = true
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 0
 -- config.window_background_opacity = 1.0
 
