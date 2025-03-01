@@ -10,7 +10,8 @@ return {
     -- colorscheme = "rose-pine-main",
     -- colorscheme = "tokyonight-night",
     -- colorscheme = "gruvbox",
-    colorscheme = "kanagawa",
+    -- colorscheme = "kanagawa",
+    colorscheme = "rose-pine-dawn",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     -- highlights = {
     --   init = { -- this table overrides highlights in all themes
