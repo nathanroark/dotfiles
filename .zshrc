@@ -63,7 +63,10 @@ esac
 #-----------------------------------------
 
 # eval "$(oh-my-posh init zsh)" # no theme (default)
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-kanagawa.omp.json)"
+# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-kanagawa.omp.json)"
+#
+# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/M365Princess.omp.json)"
 
 #-----------------------------------------
 
