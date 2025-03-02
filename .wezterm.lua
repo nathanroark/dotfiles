@@ -7,10 +7,10 @@ local config = wezterm.config_builder()
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 20.0
 -- config.color_scheme = "Tokyo Night"
--- config.color_scheme = "Tokyo Night (Gogh)"
+config.color_scheme = "Tokyo Night (Gogh)"
 -- config.color_scheme = "Kanagawa (Gogh)"
 -- config.color_scheme = "Kanagawa Dragon (Gogh)"
-config.color_scheme = "Horizon Bright (Gogh)"
+-- config.color_scheme = "Horizon Bright (Gogh)"
 
 -- config.color_scheme = "Catppuccin Mocha"
 -- config.color_scheme = "Rose Pine"
