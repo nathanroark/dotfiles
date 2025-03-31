@@ -19,7 +19,7 @@ config.colors = {
 	-- foreground = "silver",
 	-- The default background color
 	-- background = "hsl(240, 15%, 13%)",
-	background = "hsl(240, 0%, 0%)",
+	background = "hsl(240, 10%, 2%)",
 }
 
 config.window_padding = {
