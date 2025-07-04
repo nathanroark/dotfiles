@@ -66,7 +66,7 @@ esac
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-kanagawa.omp.json)"
 #
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/1_shell.omp.json)"
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/M365Princess.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-tokyo.omp.json)"
 
 #-----------------------------------------
 
@@ -83,3 +83,4 @@ eval "$(atuin init zsh)"
 
 # add scripts to path
 export PATH="$HOME/scripts:$PATH"
+. "/Users/nathan/.deno/env"
