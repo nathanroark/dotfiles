@@ -18,6 +18,7 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.pack.astro" },
   { import = "astrocommunity.pack.cpp" },
+  { import = "astrocommunity.pack.cs" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   -- { import = "astrocommunity.pack.rust" },
