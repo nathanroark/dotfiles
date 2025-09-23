@@ -66,7 +66,8 @@ esac
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-kanagawa.omp.json)"
 #
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/poshcat.omp.json)"
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-tokyo.omp.json)"
+# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-tokyo.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/mocha.omp.yaml)"
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/gruvbox.omp.json)"
 
 #-----------------------------------------
