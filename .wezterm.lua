@@ -4,6 +4,7 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- config.font = wezterm.font("JetBrains Mono")
 config.font = wezterm.font("JetBrains Mono")
 config.font_size = 20.0
 --
