@@ -15,8 +15,10 @@ return {
     -- colorscheme = "tokyonight-night",
     -- colorscheme = "Gruvbox", -- set the colorscheme to gruvbox
     -- colorscheme = "gruvbox-baby",
-    colorscheme = "catppuccin",
-    -- colorscheme = "catppuccin-mocha",
+    -- colorscheme = "catppuccin",
+    colorscheme = "catppuccin-mocha",
+    -- colorscheme = "night-owl",
+    -- colorscheme = "poimandres",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
