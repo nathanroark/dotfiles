@@ -21,8 +21,8 @@ config.colors = {
 	-- The default text color
 	-- foreground = "silver",
 	-- The default background color
-	-- background = "hsl(240, 16%, 13%)",
-	background = "hsl(240, 16%, 8%)",
+	background = "hsl(240, 16%, 10%)",
+	-- background = "hsl(240, 16%, 8%)",
 	-- background = "hsl(240, 16%, 2%)",
 	-- background = "hsl(240, 0%, 0%)",
 }
