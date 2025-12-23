@@ -9,8 +9,8 @@ config.font = wezterm.font("JetBrains Mono")
 config.font_size = 16.0
 --
 -- config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "Night Owl (Gogh)"
--- config.color_scheme = "catppuccin-mocha"
+-- config.color_scheme = "Night Owl (Gogh)"
+config.color_scheme = "catppuccin-mocha"
 -- config.color_scheme = "Tokyo Night"
 -- config.color_scheme = "Tokyo Night (Gogh)"
 -- config.color_scheme = "Gruvbox dark, hard (base16)"
@@ -21,8 +21,8 @@ config.colors = {
 	-- The default text color
 	-- foreground = "silver",
 	-- The default background color
-	background = "hsl(240, 16%, 10%)",
-	-- background = "hsl(240, 16%, 8%)",
+	-- background = "hsl(240, 16%, 10%)",
+	background = "hsl(240, 10%, 9%)",
 	-- background = "hsl(240, 16%, 2%)",
 	-- background = "hsl(240, 0%, 0%)",
 }
@@ -47,7 +47,7 @@ config.window_padding = {
 
 --Requires Wayland
 -- config.enable_wayland = true
--- config.window_background_opacity = 0.85
+-- config.window_background_opacity = 0.80
 -- config.macos_window_background_blur = 0
 -- config.window_background_opacity = 1.0
 
