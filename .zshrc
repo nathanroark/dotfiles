@@ -42,16 +42,6 @@ export NVM_DIR="$HOME/.nvm"
 
 #-----------------------------------------
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-# bun end
-
-#-----------------------------------------
-
 # pnpm
 export PNPM_HOME="/Users/nathan/Library/pnpm"
 case ":$PATH:" in
@@ -62,12 +52,12 @@ esac
 
 #-----------------------------------------
 
-# eval "$(oh-my-posh init zsh)" # no theme (default)
+eval "$(oh-my-posh init zsh)" # no theme (default)
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-kanagawa.omp.json)"
 #
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/poshcat.omp.json)"
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/nathan-tokyo.omp.json)"
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/mocha.omp.yaml)"
+# eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/mocha.omp.yaml)"
 # eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/gruvbox.omp.json)"
 
 #-----------------------------------------
@@ -85,4 +75,4 @@ eval "$(atuin init zsh)"
 
 # add scripts to path
 export PATH="$HOME/scripts:$PATH"
-. "/Users/nathan/.deno/env"
+# . "/Users/nathan/.deno/env"
