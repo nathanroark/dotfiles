@@ -6,10 +6,11 @@ return {
     -- change colorscheme
     -- colorscheme = "astrodark",
     -- colorscheme = "tokyonight-night",
+    colorscheme = "tokyonight-moon",
     -- colorscheme = "Gruvbox", -- set the colorscheme to gruvbox
     -- colorscheme = "gruvbox-baby",
     -- colorscheme = "catppuccin",
-    colorscheme = "catppuccin-mocha",
+    -- colorscheme = "catppuccin-mocha",
     -- colorscheme = "bearded",
     -- colorscheme = "rose-pine",
     -- colorscheme = "night-owl",
