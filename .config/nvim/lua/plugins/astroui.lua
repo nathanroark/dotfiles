@@ -9,8 +9,8 @@ return {
     -- colorscheme = "Gruvbox", -- set the colorscheme to gruvbox
     -- colorscheme = "gruvbox-baby",
     -- colorscheme = "catppuccin",
-    -- colorscheme = "catppuccin-mocha",
-    colorscheme = "bearded",
+    colorscheme = "catppuccin-mocha",
+    -- colorscheme = "bearded",
     -- colorscheme = "rose-pine",
     -- colorscheme = "night-owl",
     -- colorscheme = "poimandres",
