@@ -76,3 +76,5 @@ eval "$(atuin init zsh)"
 # add scripts to path
 export PATH="$HOME/scripts:$PATH"
 # . "/Users/nathan/.deno/env"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
