@@ -2,7 +2,8 @@
 
 ## Tools
 
-- [neovim](./.config/nvim)
+- [AstroNvim](.config/nvim)
+- [WezTerm](.wezterm.lua)
 
 ## wezTerm
 
