@@ -2,7 +2,7 @@
 
 ## Tools
 
-- [neovim](./config/nvim)
+- [neovim](./.config/nvim)
 
 ## wezTerm
 
