@@ -4,11 +4,5 @@
 
 - [AstroNvim](.config/nvim)
 - [WezTerm](.wezterm.lua)
-
-## wezTerm
-
-## nvchad
-
-## tmux
-
-## zshrc
+- [tmux](.config/tmux)
+- [zsh](.zshrc)
