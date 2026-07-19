@@ -1,4 +1,26 @@
+# OS
 .DS_Store
+
+# Tool caches, logs, state, databases — regenerated, never version these
+*.log
+*.bak
+*.mdb
+**/library-cache/
+update-notifier-*.json
+.cagent_first_run
+
+# Tool state directories that leak into ~/.config via stow
+/.config/configstore/
+/.config/simple-update-notifier/
+/.config/uv/
+/.config/NuGet/
+/.config/stetic/
+/.config/xbuild/
+/.config/cagent/
+/.config/tanstack/
+/.config/zed/prompts/
+/.config/codesandbox/
+
+# Copilot
 /github-copilot
-/codesandbox
 /.config/github-copilot
